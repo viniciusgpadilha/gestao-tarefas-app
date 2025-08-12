@@ -1,0 +1,6 @@
+<h1>Lista de tarefas</h1>
+@for (task of tasks; track task.id) {
+  <p>{{ task.nome }}</p>
+} @empty {
+  <p>Não foi possível achar nenhuma tarefa.</p>
+}
