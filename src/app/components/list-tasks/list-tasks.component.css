@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  background: #e0e0e0;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 70%;
+  margin: 2rem auto;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.table-tasks {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1em; /* separa as linhas */
+}
+
+.table-tasks th {
+  text-align: center;
+  padding: 1em;
+  color: #5a5555;
+  font-weight: 600;
+}
+
+.task-line {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: inset 3px 3px 6px #bebebe,
+              inset -3px -3px 6px #ffffff;
+  transition: all 0.25s ease;
+}
+
+.task-line:hover {
+  box-shadow: 6px 6px 12px #bebebe,
+              -6px -6px 12px #ffffff;
+  transform: translateY(-2px);
+}
+
+.task-line td {
+  padding: 1em;
+}
+
+.task-content {
+  /* Apenas centraliza ou aplica espaçamento interno, se quiser */
+  display: flex;
+  justify-content: center; /* ou space-between */
+}

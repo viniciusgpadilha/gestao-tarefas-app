@@ -1,6 +1,26 @@
-<h1>Lista de tarefas</h1>
-@for (task of tasks; track task.id) {
-  <p>{{ task.nome }}</p>
-} @empty {
-  <p>Não foi possível achar nenhuma tarefa.</p>
-}
+<div class="container">
+  <h1 class="title">Lista de tarefas</h1>
+
+  <table class="table-tasks">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Descrição</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (task of tasks; track task.id) {
+        <tr class="task-line">
+          <td><div class="task-content">{{ task.id }}</div></td>
+          <td><div class="task-content">{{ task.description }}</div></td>
+          <td><div class="task-content">{{ task.status }}</div></td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="3" class="empty">Não foi possível achar nenhuma tarefa.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
