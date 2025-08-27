@@ -47,7 +47,6 @@ body {
 }
 
 .task-content {
-  /* Apenas centraliza ou aplica espaçamento interno, se quiser */
   display: flex;
-  justify-content: center; /* ou space-between */
+  justify-content: center;
 }

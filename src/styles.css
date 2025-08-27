@@ -2,3 +2,109 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Ubuntu, "Helvetica Neue", sans-serif; }
+
+body {
+  margin: 0;
+  background: #e0e0e0;
+  font-family: sans-serif;
+}
+
+.container {
+  display: grid;
+  max-width: 70%;
+  margin: 2rem auto;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.table-tasks {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1em; /* separa as linhas */
+}
+
+.table-tasks th {
+  text-align: center;
+  padding: 1em;
+  color: #5a5555;
+  font-weight: 600;
+}
+
+.task-line {
+  background: #ffffff;
+}
+
+.task-line:hover {
+  box-shadow: 4px 4px 10px #bebebe,
+              -4px -4px 10px #ffffff;
+  transform: translateY(-2px);
+}
+
+.task-line td {
+  padding: 1em;
+}
+
+.task-content {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: grid;
+  align-items: center;
+}
+
+.form-group {
+  display: grid;
+  margin: .5em;
+}
+
+input, textarea, select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+label {
+  margin-bottom: .2em;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-group button {
+  margin: .5em;
+  align-items: end;
+}
+
+button {
+  padding: 1em;
+  border: none;
+  border-radius: 1em;
+  box-shadow: 4px 4px 10px #bebebe,
+  -4px -4px 10px #ffffff;
+  background-color: #fff;
+}
+
+
+button:hover {
+  background-color: #e2e2e2;
+  transition-duration: 500ms;
+  box-shadow: 2px 2px 5px #ffffff,
+  -2px -2px 5px #bebebe;
+}
+
+button:active {
+  background-color: #c2c2c2;
+  transition-duration: 50ms;
+  box-shadow: 4px 4px 10px #ffffff,
+  -4px -4px 10px #949494;
+}
