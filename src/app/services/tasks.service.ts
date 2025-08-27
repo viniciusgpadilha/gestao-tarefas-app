@@ -14,7 +14,7 @@ export interface Task {
   providedIn: 'root'
 })
 export class TaskService {
-  private apiUrl = 'http://127.0.0.1:8000/api/tasks';
+  private apiUrl = 'http://localhost:8000/api/tasks';
 
   constructor(private http: HttpClient) {}
 
@@ -27,7 +27,7 @@ export class TaskService {
   }
 
   createTask(task: Task): Observable<Task> {
-    return this.http.post<Task>(this.apiUrl, task);
+    return this.http.post<Task>(`${this.apiUrl}/store`, task);
   }
 
   updateTask(id: number, task: Task): Observable<Task> {

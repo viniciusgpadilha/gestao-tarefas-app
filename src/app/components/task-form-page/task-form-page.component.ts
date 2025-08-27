@@ -24,8 +24,9 @@ export class TaskFormPageComponent implements OnInit {
     this.form = this.fb.group({
       title: ['', Validators.required],
       description: [''],
-      status: ['todo', Validators.required],
-      category_id: ['dev', Validators.required]
+      status: ['1', Validators.required],
+      category_id: ['1', Validators.required],
+      user_id: ['1', Validators.required]
     });
 
     this.taskId = Number(this.route.snapshot.paramMap.get('id'));
