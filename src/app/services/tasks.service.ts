@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Task {
-  id?: number;
+  id: number;
   title: string;
   description: string;
-  status: 'todo' | 'doing' | 'done';
+  status: number;
   category_id: number;
 }
 

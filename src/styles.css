@@ -88,23 +88,10 @@ label {
 button {
   padding: 1em;
   border: none;
-  border-radius: 1em;
-  box-shadow: 4px 4px 10px #bebebe,
-  -4px -4px 10px #ffffff;
   background-color: #fff;
 }
-
 
 button:hover {
   background-color: #e2e2e2;
   transition-duration: 500ms;
-  box-shadow: 2px 2px 5px #ffffff,
-  -2px -2px 5px #bebebe;
-}
-
-button:active {
-  background-color: #c2c2c2;
-  transition-duration: 50ms;
-  box-shadow: 4px 4px 10px #ffffff,
-  -4px -4px 10px #949494;
 }

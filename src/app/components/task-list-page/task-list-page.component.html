@@ -1,26 +1,71 @@
+<h2 class="title">Kanban de Tarefas</h2>
+
+<div *ngIf="loading">Carregando...</div>
+
 <div class="container">
-  <h1 class="title">Lista de tarefas</h1>
-  <button (click)="newTask()">+ Nova Tarefa</button>
-  <table class="table-tasks">
-    <thead>
-      <tr>
-        <th>Código</th>
-        <th>Descrição</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for (task of tasks; track task.id) {
-        <tr class="task-line">
-          <td><div class="task-content">{{ task.id }}</div></td>
-          <td><div class="task-content">{{ task.description }}</div></td>
-          <td><div class="task-content">{{ task.status }}</div></td>
-        </tr>
-      } @empty {
-        <tr>
-          <td colspan="3" class="empty">Não foi possível achar nenhuma tarefa.</td>
-        </tr>
-      }
-    </tbody>
-  </table>
+  <button (click)="newTask()">➕ Nova Tarefa</button>
+  <div class="board" *ngIf="!loading">
+    <!-- To Do -->
+    <div
+      cdkDropList
+      [cdkDropListData]="todo"
+      class="column"
+      (cdkDropListDropped)="drop($event, 1)"
+      [cdkDropListConnectedTo]="['doingList', 'doneList']"
+      id="todoList"
+    >
+      <h3>To Do</h3>
+      <div class="card card-todo" *ngFor="let task of todo" cdkDrag>
+        <strong>{{ task.title }}</strong>
+        <p>{{ task.description }}</p>
+        <div class="button-group">
+          <button (click)="editTask(task.id)">✏️ Editar</button>
+          <button (click)="deleteTask(task.id)">🗑️ Excluir</button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Doing -->
+    <div
+      cdkDropList
+      [cdkDropListData]="doing"
+      class="column"
+      (cdkDropListDropped)="drop($event, 2)"
+      [cdkDropListConnectedTo]="['todoList', 'doneList']"
+      id="doingList"
+    >
+      <h3>Doing</h3>
+      <div class="card card-doing" *ngFor="let task of doing" cdkDrag>
+        <strong>{{ task.title }}</strong>
+        <p>{{ task.description }}</p>
+        <div class="button-group">
+          <button (click)="editTask(task.id)">✏️ Editar</button>
+          <button (click)="deleteTask(task.id)">🗑️ Excluir</button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Done -->
+    <div
+      cdkDropList
+      [cdkDropListData]="done"
+      class="column"
+      (cdkDropListDropped)="drop($event, 3)"
+      [cdkDropListConnectedTo]="['todoList', 'doingList']"
+      id="doneList"
+    >
+      <h3>Done</h3>
+      <div class="card card-done" *ngFor="let task of done" cdkDrag>
+        <strong>{{ task.title }}</strong>
+        <p>{{ task.description }}</p>
+        <div class="button-group">
+          <button (click)="editTask(task.id)">✏️ Editar</button>
+          <button (click)="deleteTask(task.id)">🗑️ Excluir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
 </div>
+

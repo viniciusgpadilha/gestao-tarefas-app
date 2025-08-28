@@ -1,52 +1,41 @@
-body {
-  margin: 0;
-  background: #e0e0e0;
-  font-family: sans-serif;
-}
-
-.container {
-  max-width: 70%;
-  margin: 2rem auto;
-}
-
-.title {
+.board {
   display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
+  gap: 16px;
+  margin-top: 20px;
 }
 
-.table-tasks {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 1em; /* separa as linhas */
-}
-
-.table-tasks th {
-  text-align: center;
-  padding: 1em;
-  color: #5a5555;
-  font-weight: 600;
-}
-
-.task-line {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: inset 3px 3px 6px #bebebe,
-              inset -3px -3px 6px #ffffff;
-  transition: all 0.25s ease;
-}
-
-.task-line:hover {
-  box-shadow: 6px 6px 12px #bebebe,
-              -6px -6px 12px #ffffff;
-  transform: translateY(-2px);
-}
-
-.task-line td {
-  padding: 1em;
-}
-
-.task-content {
+.column {
+  flex: 1;
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 300px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  background: white;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: grab;
+}
+
+.card:active {
+  cursor: grabbing;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card-todo {
+  background-color: red;
+}
+
+.card-doing {
+  background-color: yellow;
+}
+
+.card-done {
+  background-color: green;
 }
