@@ -91,6 +91,10 @@ button {
   background-color: #fff;
 }
 
+edit-button {
+  background-color: yellow;
+}
+
 button:hover {
   background-color: #e2e2e2;
   transition-duration: 500ms;

@@ -5,4 +5,5 @@ import { TaskFormPageComponent } from './components/task-form-page/task-form-pag
 export const routes: Routes = [
   { path: 'tasks', component: TaskListPageComponent },
   { path: 'tasks/new', component: TaskFormPageComponent },
+  { path: 'tasks/edit/:id', component: TaskFormPageComponent },
 ];

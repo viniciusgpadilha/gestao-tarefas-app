@@ -1,6 +1,8 @@
-<h2 class="title">Kanban de Tarefas</h2>
+<h2 class="title">Painel de Tarefas</h2>
 
-<div *ngIf="loading">Carregando...</div>
+@if (loading) {
+  <div>Carregando...</div>
+}
 
 <div class="container">
   <button (click)="newTask()">➕ Nova Tarefa</button>
@@ -15,14 +17,16 @@
       id="todoList"
     >
       <h3>To Do</h3>
-      <div class="card card-todo" *ngFor="let task of todo" cdkDrag>
-        <strong>{{ task.title }}</strong>
-        <p>{{ task.description }}</p>
-        <div class="button-group">
-          <button (click)="editTask(task.id)">✏️ Editar</button>
-          <button (click)="deleteTask(task.id)">🗑️ Excluir</button>
+      @for (task of todo; track task.id) {
+        <div class="card card-todo" cdkDrag>
+          <strong>{{ task.title }}</strong>
+          <p>{{ task.description }}</p>
+          <div class="button-group">
+            <button (click)="editTask(task.id)">Editar</button>
+            <button (click)="deleteTask(task.id)">Excluir</button>
+          </div>
         </div>
-      </div>
+      }
     </div>
   
     <!-- Doing -->
@@ -35,14 +39,16 @@
       id="doingList"
     >
       <h3>Doing</h3>
-      <div class="card card-doing" *ngFor="let task of doing" cdkDrag>
-        <strong>{{ task.title }}</strong>
-        <p>{{ task.description }}</p>
-        <div class="button-group">
-          <button (click)="editTask(task.id)">✏️ Editar</button>
-          <button (click)="deleteTask(task.id)">🗑️ Excluir</button>
+      @for (task of doing; track task.id) {
+        <div class="card card-doing" cdkDrag>
+          <strong>{{ task.title }}</strong>
+          <p>{{ task.description }}</p>
+          <div class="button-group">
+            <button (click)="editTask(task.id)">Editar</button>
+            <button (click)="deleteTask(task.id)">Excluir</button>
+          </div>
         </div>
-      </div>
+      }
     </div>
   
     <!-- Done -->
@@ -55,17 +61,17 @@
       id="doneList"
     >
       <h3>Done</h3>
-      <div class="card card-done" *ngFor="let task of done" cdkDrag>
-        <strong>{{ task.title }}</strong>
-        <p>{{ task.description }}</p>
-        <div class="button-group">
-          <button (click)="editTask(task.id)">✏️ Editar</button>
-          <button (click)="deleteTask(task.id)">🗑️ Excluir</button>
+      @for (task of done; track task.id) {
+        <div class="card card-done" cdkDrag>
+          <strong>{{ task.title }}</strong>
+          <p>{{ task.description }}</p>
+          <div class="button-group">
+            <button (click)="editTask(task.id)">Editar</button>
+            <button (click)="deleteTask(task.id)">Excluir</button>
+          </div>
         </div>
-      </div>
+      }
     </div>
   </div>
-  
-  
 </div>
 

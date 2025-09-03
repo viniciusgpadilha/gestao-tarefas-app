@@ -29,13 +29,13 @@
 }
 
 .card-todo {
-  background-color: red;
+  background-color: #fcccce;
 }
 
 .card-doing {
-  background-color: yellow;
+  background-color: #fdf8d8;
 }
 
 .card-done {
-  background-color: green;
+  background-color: #ddfdc4;
 }

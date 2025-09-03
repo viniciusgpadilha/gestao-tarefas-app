@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TaskService, Task } from '../../services/tasks.service';
 import { CommonModule } from '@angular/common';
 import { DragDropModule, CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-task-list-page',
@@ -21,7 +22,8 @@ export class TaskListPageComponent implements OnInit {
 
   constructor(
     private taskService: TaskService,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -69,7 +71,13 @@ export class TaskListPageComponent implements OnInit {
 
   deleteTask(id: number) {
     if (confirm('Tem certeza que deseja excluir essa tarefa?')) {
-      this.taskService.deleteTask(id).subscribe(() => this.loadTasks());
+      this.taskService.deleteTask(id).subscribe((response: any) => {
+        this.snackBar.open(response.message, 'Fechar', {
+          duration: 3000,
+          verticalPosition: 'top'
+        })
+
+      this.loadTasks()});
     }
   }
 }
